@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+      <script src="https://kit.fontawesome.com/e01e97a33e.js" crossorigin="anonymous"></script>
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <div class="contenedor">
+            <div id="buscador">
+                  <section>
+                        <label>Mostrar todos los pokemons</label>
+                        <button id="todos" @click="lanzaPeticion(true)">Buscar</button><br>
+                  </section>
+            </div>
+            <ul class="contenedor-cards">
+                  <div class="card" v-for="pokemon of pokemons">
+                        <li class="parte parte1">
+                              <div class="contenido">
+                                    <img :src="pokemon.imagen" :alt="pokemon.nombre">
+                              </div>
+                        </li>
+                        <li class="parte parte2">
+                              <div class="contenido">
+                                    <p>Nombre: {{pokemon.nombre}}</p>
+                                    <p>Peso: {{pokemon.peso}}</p>
+                                    <p>Altura: {{pokemon.altura}}</p>
+                                    <p>Experiencia: {{pokemon.experiencia}}</p>
+                              </div>
+                        </li>
+                  </div>
+            </ul>
+      </div>
+      
+      <script src="index.js"></script>
+</body>
+</html>
